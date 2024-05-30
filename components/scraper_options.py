@@ -40,6 +40,7 @@ def scrape_content():
     if data is not None and column.value is not placeholder:
         State.data_size.value = len(data)
         data[output_col.value] = data[column.value].apply(lambda x: scrape_main_content(x, update_progress))
+        State.dataframe = data
     State.reset_progress()
 
 def update_progress():
